@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 import java.util.ArrayList;
 
 public class Usuario {
@@ -17,7 +12,7 @@ public class Usuario {
         this.apellido = apellido;
         this.telefono = telefono;
         this.email = email;
-        this.librosPendientes = new ArrayList();
+        this.librosPendientes = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -40,11 +35,17 @@ public class Usuario {
         return this.librosPendientes;
     }
 
-    public void addLibroPendiente(Libro libro) {
+    public void agregarAColaEspera(Libro libro) {
         this.librosPendientes.add(libro);
     }
 
-    public void removeLibroPendiente(Libro libro) {
+    public void prestarLibro(Libro libro) {
+        this.librosPendientes.add(libro);
+        libro.setPrestado(true);
+    }
+
+    public void devolverLibro(Libro libro) {
         this.librosPendientes.remove(libro);
+        libro.setPrestado(false);
     }
 }

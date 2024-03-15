@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 import java.util.ArrayList;
 
 public class Biblioteca {
@@ -26,5 +21,25 @@ public class Biblioteca {
 
     public ArrayList<Libro> getLibros() {
         return this.libros;
+    }
+
+    public Usuario encontrarUsuario(String nombreUsuario) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getNombre().equalsIgnoreCase(nombreUsuario)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
+    public Libro encontrarLibro(String titulo) {
+        System.out.println("Buscando libro con título: " + titulo);
+        for (Libro libro : libros) {
+            System.out.println("Título del libro en la biblioteca: " + libro.getTitulo());
+            if (libro.getTitulo().equalsIgnoreCase(titulo)) {
+                return libro;
+            }
+        }
+        return null;
     }
 }
